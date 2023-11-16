@@ -25,36 +25,33 @@ const Whiteboard = () => {
     }
 
     return (
-        <div className="flex flex-col h-screen">
+        <div className="w-full flex flex-col h-full">
             {/* Top bar */}
-            <div className="pl-2 border border-solid border-gray-700 bg-neutral-800 cursor-auto flex items-center text-white">
-                <div>
-                    <div className="text-gray-300 font-bold mb-1">Whiteboard</div>
-                    <div className="text-xs text-gray-400 mb-1">
-                        You can draw here
-                    </div>
+            <div className="p-2 border border-solid border-gray-700 bg-neutral-800 text-white">
+                <div className="font-bold mb-1">Whiteboard</div>
+                <div className="text-xs text-gray-400 mb-1">
+                    You can draw here
                 </div>
             </div>
 
             {/* Whiteboard content */}
-            <div className="flex-1 bg-white flex justify-center items-center">
-                <div className="flex flex-col gap-10 pr-10">
-                    <button
-                        type="button"
-                        className="p-2 rounded-md border border-black"
-                        onClick={clear}
-                    >
-                        Clear canvas
-                    </button>
+            <div className="flex-1 flex items-center justify-center">
+                <div className="w-full h-full border border-black rounded-lg p-4">
+                    <div className="flex gap-4">
+                        <button
+                            type="button"
+                            className="p-2 rounded-md border border-black"
+                            onClick={clear}
+                        >
+                            Clear canvas
+                        </button>
+                    </div>
+                    <canvas
+                        ref={canvasRef}
+                        onMouseDown={onMouseDown}
+                        className="border border-black rounded-md"
+                    />
                 </div>
-                <canvas
-                    ref={canvasRef}
-                    onMouseDown={onMouseDown}
-                    width={300} // Adjust the canvas width as needed
-                    height={300} // Adjust the canvas height as needed
-                    className="border border-black rounded-md"
-                    style={{ marginTop: "-2px" }}
-                />
             </div>
         </div>
     );

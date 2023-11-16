@@ -34,7 +34,7 @@ const Room = () => {
             onChange={setSizes}
           >
             <Pane>
-              <div className="flex items-center justify-center h-full bg-gray-800">
+              <div className="flex items-center justify-center h-full bg-gray-800 border-gray">
                 {/* Whiteboard */}
                 <Whiteboard />
               </div>
