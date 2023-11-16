@@ -43,7 +43,7 @@ const Room = () => {
             <Pane>
               <div className="flex items-center justify-center h-full bg-gray-800">
                 {/* Chatbox */}
-                Hey there
+                Chatroom
               </div>
             </Pane>
           </SplitPane>
