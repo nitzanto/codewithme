@@ -7,7 +7,8 @@ import CodeEditor from "@/components/Workspace/codeEditor/CodeEditor";
 import Whiteboard from "@/components/Workspace/Whiteboard/Whiteboard";
 
 const Room = () => {
-  const [sizes, setSizes] = useState([100, "30%", "auto"]);
+  const [whiteboardSizes, setWhiteboardSizes] = useState([300, "30%", "auto"]);
+  const [chatboxSizes, setChatboxSizes] = useState([500, "50%", "auto"]);
 
   const sashRender = (index: any, active: any) => {
     return (
@@ -22,16 +23,16 @@ const Room = () => {
     <div className="h-screen bg-black">
       <SplitPane
         split="vertical"
-        sizes={sizes}
-        onChange={setSizes}
+        sizes={whiteboardSizes}
+        onChange={setWhiteboardSizes}
         sashRender={sashRender}
       >
         <Pane>
           <SplitPane
             split="horizontal"
-            sizes={sizes}
+            sizes={chatboxSizes}
             sashRender={sashRender}
-            onChange={setSizes}
+            onChange={setChatboxSizes}
           >
             <Pane>
               <div className="flex items-center justify-center h-full bg-gray-800 border-gray">
@@ -41,6 +42,7 @@ const Room = () => {
             </Pane>
             <Pane>
               <div className="flex items-center justify-center h-full bg-gray-800">
+                {/* Chatbox */}
                 Hey there
               </div>
             </Pane>
