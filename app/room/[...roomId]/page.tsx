@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import SplitPane, { Pane } from 'split-pane-react';
 import 'split-pane-react/esm/themes/default.css';
 import CodeEditor from "@/components/Workspace/codeEditor/CodeEditor";
+import Whiteboard from "@/components/Workspace/Whiteboard/Whiteboard";
 
 const Room = () => {
     const [sizes, setSizes] = useState([100, '30%', 'auto']);
@@ -36,8 +37,8 @@ const Room = () => {
             >
                 <Pane>
                     <div className="flex items-center justify-center h-full bg-gray-800">
-                        {/* Explanation content goes here */}
-                        Explanation Pane
+                        {/* Whiteboard */}
+                        <Whiteboard />
                     </div>
                 </Pane>
                 <Pane>
